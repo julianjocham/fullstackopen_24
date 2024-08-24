@@ -5,7 +5,7 @@ const StatisticsLine = (props) => {
 
     const { text, value } = props
 
-    return <p>{text} {value}</p>
+    return <tr>{text} {value}</tr>
 
 }
 
@@ -15,12 +15,15 @@ const Statistics = (props) => {
 
     return <div>
       <h2>statistics</h2>
-      <StatisticsLine text="good" value={good} />
-      <StatisticsLine text="neutral" value={neutral} />
-      <StatisticsLine text="bad" value={bad} />
-      <StatisticsLine text="all" value={good + neutral + bad} />
-      <StatisticsLine text="average" value={(good - bad) / (good + neutral + bad)} />
-      <StatisticsLine text="positive" value={good / (good + neutral + bad)} />
+     <table>
+     <StatisticsLine text="good" value={good} />
+           <StatisticsLine text="neutral" value={neutral} />
+           <StatisticsLine text="bad" value={bad} />
+           <StatisticsLine text="all" value={good + neutral + bad} />
+           <StatisticsLine text="average" value={(good - bad) / (good + neutral + bad)} />
+           <StatisticsLine text="positive" value={good / (good + neutral + bad)} />
+     </table>
+
     </div>
 }
 
